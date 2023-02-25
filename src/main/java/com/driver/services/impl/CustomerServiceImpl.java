@@ -30,14 +30,14 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void register(Customer customer) {
 		//Save the customer in database
-		//customerRepository2.save(customer);
+		customerRepository2.save(customer);
 	}
 
 	@Override
 	public void deleteCustomer(Integer customerId) {
 		// Delete customer without using deleteById function
 		Customer customer=customerRepository2.findById(customerId).get();
-		//customerRepository2.delete(customer);
+		customerRepository2.delete(customer);
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class CustomerServiceImpl implements CustomerService {
 		customerRepository2.save(customer);
 
 		driver.getTripBookingList().add(tripBooking);
-		//driverRepository2.save(driver);
+		driverRepository2.save(driver);
 
 		return tripBooking;
 	}
@@ -91,7 +91,7 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.setBill(0);
 		tripBooking.getDriver().getCab().setAvailable(true);
 
-		//tripBookingRepository2.save(tripBooking);
+		tripBookingRepository2.save(tripBooking);
 	}
 
 	@Override
@@ -105,6 +105,6 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.setBill(bill);
 		tripBooking.getDriver().getCab().setAvailable(true);
 
-		//tripBookingRepository2.save(tripBooking);
+		tripBookingRepository2.save(tripBooking);
 	}
 }
